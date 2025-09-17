@@ -7,7 +7,33 @@
     background-color: rgb(230 253 255/ 0.4);
     border-radius: 20px;
     padding:20px;
+    gap: 20px;
+    text-align: center;
+    display: flex;
 
+}
+.columna
+{
+    padding: 20px;
+    border-radius: 10px;
+     background-color: rgba(0, 0, 0, 0.5);
+    color: #f0f0f0;
+    text-shadow: none;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+
+}
+
+/*Proporciones de las columnas*/
+.columna-01{
+    flex: 7;
+}
+
+.columna-02{
+    flex: 3;
 }
 
 input
@@ -35,7 +61,7 @@ input
     font-weight: bold;
     text-shadow: 2px 2px 4px #000000;
 }
-button
+.Body__button
 {
     padding: 10px 20px;
     font-size: 16px;
@@ -45,7 +71,52 @@ button
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    
+    
 }
-button:hover{
+.Body__button:hover{
     background-color: #FFCA0A;
 }
+.caja__columna__mapa{
+    width: 600px;
+    height: 450px;
+    border: none;
+    border-radius: 10px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.formulario__titulo {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.formulario__grupo {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario__label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.formulario__campo {
+  width: 100%;
+}
+
+.formulario__input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  box-sizing: border-box;
+}
+
