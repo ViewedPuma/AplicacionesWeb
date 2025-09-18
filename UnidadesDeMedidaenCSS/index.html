@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidades de Medida en CSS</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="Body">
+    <div>
+        <header class="Header">
+            <h1>Cuadro Comparativo de Unidades de Medida en CSS</h1>
+        </header>
+    </div>
+    <div class="Body__div">
+        <table class="Body__Tabla">
+            <thead>
+                <tr class="Body__Tabla--tr">
+                    <th class="Body__Tabla--th" scope="col">Unidad de Medida</th>
+                    <th class="Body__Tabla--th" scope="col">Descripción</th>
+                    <th class="Body__Tabla--th" scope="col">Ejemplo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Body__Tabla--tr">
+                    <td class="Body__Tabla--td"colspan="3"><strong>Unidades Absolutas</strong></td>
+                </tr>
+                <tr class="Body__Tabla--tr">
+                    <td class="Body__Tabla--td">px (píxeles)</td>
+                    <td class="Body__Tabla--td">Unidad más común. Representa un píxel en la pantalla.</td>
+                    <td class="Body__Tabla--td">font-size: 16px</td>
+                </tr>
+                <tr class="Body__Tabla--tr">
+                    <td class="Body__Tabla--td">cm (centímetros)</td>
+                    <td class="Body__Tabla--td">1cm = 96px / 2.54 ≈ 37.8px</td>
+                    <td class="Body__Tabla--td">width: 5cm</td>
+                </tr>
+                <tr class="Body__Tabla--tr">
+                    <td class="Body__Tabla--td">mm (milímetros)</td>
+                    <td class="Body__Tabla--td">1mm ≈ 3.78px</td>
+                    <td class="Body__Tabla--td">height: 20mm</td>
+                </tr>
+                <tr class="Body__Tabla--tr">
+                    <td class="Body__Tabla--td">in (pulgadas)</td>
+                    <td class="Body__Tabla--td">1in = 2.54cm = 96px</td>
+                    <td class="Body__Tabla--td">width: 1in</td>
+                </tr>
+                <tr class="Body__Tabla--tr">
+                    <td class="Body__Tabla--td">pt (puntos tipográficos)</td>
+                    <td class="Body__Tabla--td">1pt = 1/72 de pulgada ≈ 1.33px</td>
+                    <td class="Body__Tabla--td">font-size: 12pt</td>
+                </tr>
+                <tr class="Body__Tabla--tr">
+                    <td class="Body__Tabla--td">pc (picas)</td>
+                    <td class="Body__Tabla--td">1pc = 12pt = 16px</td>
+                    <td class="Body__Tabla--td">margin-left: 2pc</td>
+                </tr>
+
+                <tr class="Body__Tabla--tr">
+                    <td class="Body__Tabla--td" colspan="3"><strong>Unidades Relativas</strong></td>
+                </tr>
+                <tr class="Body__Tabla--tr">
+                    <td class="Body__Tabla--td">em</td>
+                    <td class="Body__Tabla--td">Relativa al tamaño de fuente del elemento padre.</td>
+                    <td class="Body__Tabla--td">font-size: 2em</td>
+                </tr>
+                <tr class="Body__Tabla--tr">
+                    <td class="Body__Tabla--td">rem</td>
+                    <td class="Body__Tabla--td">Relativa al tamaño de fuente del elemento raíz (html).</td>
+                    <td class="Body__Tabla--td">font-size: 2rem</td>
+                </tr>
+                <tr class="Body__Tabla--tr">
+                    <td class="Body__Tabla--td">%</td>
+                    <td class="Body__Tabla--td">Relativa al tamaño del contenedor inmediato.</td>
+                    <td class="Body__Tabla--td">width: 50%</td>
+                </tr>
+                <tr class="Body__Tabla--tr">
+                    <td class="Body__Tabla--td">ex</td>
+                    <td class="Body__Tabla--td">Relativa a la altura de la letra "x" de la fuente actual.</td>
+                    <td class="Body__Tabla--td">font-size: 2ex</td>
+                </tr>
+                <tr class="Body__Tabla--tr">
+                    <td class="Body__Tabla--td">ch</td>
+                    <td class="Body__Tabla--td">Relativa al ancho del carácter "0" (cero) de la fuente.</td>
+                    <td class="Body__Tabla--td">width: 20ch</td>
+                </tr>
+                <tr class="Body__Tabla--tr">
+                    <td class="Body__Tabla--td">vw</td>
+                    <td class="Body__Tabla--td">Relativa al ancho del viewport. 1vw = 1% del ancho.</td>
+                    <td class="Body__Tabla--td">width: 50vw</td>
+                </tr>
+                <tr class="Body__Tabla--tr">
+                    <td class="Body__Tabla--td">vh</td>
+                    <td class="Body__Tabla--td">Relativa a la altura del viewport. 1vh = 1% de la altura.</td>
+                    <td class="Body__Tabla--td">height: 100vh</td>
+                </tr>
+                <tr class="Body__Tabla--tr">
+                    <td class="Body__Tabla--td">vmin</td>
+                    <td class="Body__Tabla--td">Relativa al menor valor entre vw y vh.</td>
+                    <td class="Body__Tabla--td">font-size: 10vmin</td>
+                </tr>
+                <tr class="Body__Tabla--tr">
+                    <td class="Body__Tabla--td">vmax</td>
+                    <td class="Body__Tabla--td">Relativa al mayor valor entre vw y vh.</td>
+                    <td class="Body__Tabla--td">font-size: 10vmax</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="Body__Boton--Centrar">
+            <a href="SigPractica.html" class="Body__button"> Siguiente Practica</a>
+        </div>
+    </div>
+    
+</body>
+
+</html>

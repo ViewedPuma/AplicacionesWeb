@@ -135,3 +135,12 @@ input
   box-sizing: border-box;
 }
 
+@media (max-width: 600px) {
+  .caja {
+    flex-direction: column;
+  }
+  
+  .columna {
+    width: 100%;
+  }
+}

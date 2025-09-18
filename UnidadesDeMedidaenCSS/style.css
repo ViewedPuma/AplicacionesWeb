@@ -1,0 +1,137 @@
+.Header
+{
+    background-color: #0579d0;
+    color:White;
+    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.Body
+{
+    background-color: rgb(218, 218, 218);
+    font-family: Arial, sans-serif;
+}
+
+.Body__Tabla
+{
+    border-collapse: collapse;
+    width: 100%;
+    margin: 60px auto;
+    box-shadow:0 0 10px rgba(184, 241, 255, 0.1);
+    border-radius: 10px;
+    overflow:hidden;
+    border: none;
+}
+.Body__div
+{
+    width:auto;
+    margin:auto;
+    overflow: hidden;
+    background-color: #d1e8ff;
+    padding: 20px;
+}
+
+.Body__Tabla--th
+{
+    background-color: #0579d0;
+    color:white;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+.Body__Tabla--td
+{
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align:center;
+}
+.Body__Tabla--tr
+{
+    background-color: #f9f9f9;
+}
+.Body__Tabla--tr:hover {
+  background-color: #cecece;
+}
+
+.Body__button {
+  background-color: #0579d0;
+  color: white;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(5, 121, 208, 0.15);
+  transition: background 0.2s, transform 0.2s;
+  display: inline-block;
+  margin-top: 20px;
+  
+}
+
+.Body__button:hover {
+  background-color: #035a9c;
+  transform: scale(1.05);
+}
+
+.Body__Boton--Centrar{
+    text-align: center;
+}
+
+/*para el html Sigpagina*/
+
+.Header {
+    width: 800px;
+    background-color: #0579d0;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.Contenedor {
+    width: 80%;
+    margin: auto;
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.Contenedor p {
+    width: 60%;
+    margin: 20px auto;
+    border: 2px solid #0579d0;
+    padding: 10px;
+    border-radius: 8px;
+    background: #f5faff;
+    text-align: center;
+}
+
+.Contenedor img {
+    width: 300px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+.Footer {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    background-color: #0579d0;
+    color: white;
+    border-radius: 0 0 10px 10px;
+}
+
+.SigPractica__Background
+{
+    background-image: url('./Dr-Stone-Background-Image-43.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
