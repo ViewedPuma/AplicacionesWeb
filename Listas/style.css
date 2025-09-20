@@ -1,0 +1,42 @@
+.page{
+    background-image: url("./Recursos/TheVanishedPeople3.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    padding: 20 px;
+    border:none;
+}
+
+.main__div{
+    background-color: rgba(216, 216, 216, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    width:fit-content;
+    margin: 0  auto;
+    max-width: 90%;
+    font-size: 20px;
+}
+
+.header{
+    background-color: none;
+    color: white;
+    
+    padding: 10px;
+    margin: 10px;
+    border: 15px none;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.footer{
+    background-color: none;
+    color: white;
+    
+    padding: 10px;
+    margin: 10px;
+    border: 15px none;
+    border-radius: 15px;
+    text-align: center;
+}
