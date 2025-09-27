@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: orange;
+    height: 10vh;
+    position: relative;
+}
+header img{
+    width:200px;
+    height:50px;
+    position:absolute;
+    left:0;
+}
+header nav{
+    position:absolute;
+    right:0;
+
+}
+header nav ul{
+    list-style: none;
+}
+header nav ul li{
+    display:inline-block;
+    margin: 10px;
+}
+main{
+    height: 80vh;
+    position: relative;
+}
+
+aside{
+    background-color: rgb(184, 70, 89);
+    width: 20vw;
+    position: absolute;
+    left: 0;
+    height: 80vh;
+    border-radius: 10px;
+
+}
+
+aside .box{
+    width: 18vw;
+    height: 80px;
+    background-color: rgb(111, 0, 255);
+    border-radius:10px;
+    margin: 1vw;
+}
+
+section{
+    background-color: greenyellow;
+    width: 80vw;
+    position:absolute;
+    right: 0;
+    height:80vh;
+}
+section p{
+    padding: 10px;
+}
+
+footer{
+    height: 10vh;
+    background-color: aqua;
+    
+}
+footer p{
+    text-align: center;
+    padding:20px
+}
