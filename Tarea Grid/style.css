@@ -1,0 +1,129 @@
+*{
+    
+    box-sizing: border-box;
+   
+}
+body{
+    background-color: black;
+}
+
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    
+    gap:20px;   
+    width: calc(100% - 80px);
+    height: calc(100vh - 40px);
+}
+
+.grid-item-a{
+   grid-column: 1/-1;
+   grid-row-start: 1;
+   
+   
+   display:flex;
+    
+    overflow: hidden;
+    
+}
+.grid-item-a h1{
+    color: #FFD700;
+    text-align: center;
+    margin: auto;
+}
+.grid-item-a-img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    
+    
+}
+.grid-item-b{
+    grid-column: 1/2;
+    grid-row-start: 2;
+    background: radial-gradient(circle, white, black 76%);
+
+}
+.grid-item-b-img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    
+    
+}
+.grid-item-c{
+    grid-column: 2/3;
+    grid-row-start: 2;
+    background: radial-gradient(circle, white, black 76%);
+}
+.grid-item-c-img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    
+    
+}
+.grid-item-d{
+    grid-column: 3/4;
+    grid-row-start:2;
+    background: radial-gradient(circle, white, black 76%);
+}
+.grid-item-d-img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    
+    
+}
+.grid-item-e{
+    background: radial-gradient(circle, white, black 76%);  
+    grid-column:1/2;
+    grid-row: 3;
+}
+.grid-item-e-img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    
+    
+}
+.grid-item-f{
+     grid-column:2/3;
+    grid-row: 3;
+    background: radial-gradient(circle, white, black 76%);
+    
+}
+.grid-item-f-img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    
+    
+}
+.grid-item-g{
+     grid-column:3/4;
+    grid-row: 3;
+    background: radial-gradient(circle, white, black 76%);
+    
+}
+.grid-item-g-img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    
+    
+}
+.grid-item-h{
+    grid-column: 4/6;
+    grid-row: 2/4;
+    background: radial-gradient(circle, white, black 76%);
+}
+.grid-item-h-img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    
+    
+}
