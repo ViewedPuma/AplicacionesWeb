@@ -1,0 +1,536 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #ffefe7;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+nav {
+  width: auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #7c6a0a;
+}
+
+nav p {
+  font-size: 1.5em;
+  padding-left: 30px;
+}
+
+nav .icons {
+  display: flex;
+  gap: 15px;
+}
+
+nav .icons button {
+  background: none;
+  border-style: none;
+  cursor: pointer;
+}
+
+article {
+  color: #7c6a0a;
+  width: auto;
+  padding: 0 45px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+article h1 {
+  font-size: 3em;
+  padding: 0;
+  margin: 0;
+}
+
+article p {
+  font-size: 1.5em;
+}
+
+article .impact-section {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  gap: 25px;
+}
+
+article button {
+  background: none;
+  border-style: none;
+  cursor: pointer;
+}
+
+article button {
+  background-color: #fa9500;
+  width: 12vw;
+  padding: 20px;
+  border-radius: 35px;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+article button:hover {
+  transform: scale(1.1);
+}
+
+article img {
+  width: 25vw;
+  border-radius: 19px;
+}
+
+section {
+  width: auto;
+  height: auto;
+  padding: 60px;
+}
+
+section h2 {
+  color: #7c6a0a;
+  font-size: 2em;
+  padding-bottom: 60px;
+}
+
+.product-section h2 {
+  font-weight: 300;
+}
+
+.product-section .card-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  -moz-column-gap: 100px;
+  column-gap: 100px;
+  row-gap: 80px;
+  flex-wrap: wrap;
+}
+
+.product-section .card-section .product-card {
+  width: 14vw;
+  height: 45vh;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.product-section .card-section .product-card .icon {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-bottom: 12px;
+}
+
+.product-section .card-section .product-card .icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.product-section .card-section .product-card .product-image {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-section .card-section .product-card .product-image img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 12vw;
+  height: 25vh;
+  border-radius: 6px;
+}
+
+.product-section .healthcare {
+  padding-bottom: 60px;
+}
+
+.product-section .healthcare path {
+  stroke: #7c6a0a;
+}
+
+.product-section .healthcare .product-card {
+  background-color: #ffdac6;
+  color: #7c6a0a;
+}
+
+.product-section .furniture {
+  padding-bottom: 60px;
+}
+
+.product-section .furniture path {
+  stroke: white;
+}
+
+.product-section .furniture .product-card {
+  background-color: #babd8d;
+  color: white;
+}
+
+.about-us {
+  padding-bottom: 60px;
+}
+
+.about-us .mission-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.about-us .mission-section .earth,
+.about-us .mission-section .innovation {
+  display: flex;
+  gap: 40px;
+  width: 30vw;
+}
+
+.about-us .mission-section .earth img,
+.about-us .mission-section .innovation img {
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+.about-us .mission-section .earth p,
+.about-us .mission-section .innovation p {
+  color: #e86424;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.gallery {
+  margin: 60px;
+}
+
+.gallery .gallery-images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gallery .gallery-images img {
+  width: 28vw;
+  height: 45vh;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: 5px 35%;
+  object-position: 5px 35%;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.gallery .gallery-images img:hover {
+  transform: scale(1.1);
+}
+
+.location {
+  color: #e86424;
+}
+
+.location .map {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+.location h3,
+.location p {
+  font-size: 1.5em;
+}
+
+footer {
+  background-color: #fa9500;
+  width: auto;
+  height: auto;
+  color: white;
+  padding: 40px;
+}
+
+footer .social-media {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding-bottom: 40px;
+}
+
+@media(max-width: 480px) {
+  article {
+    flex-direction: column;
+    padding: 0 45px;
+  }
+
+  article .impact-section {
+    width: 100%;
+    padding: 20px;
+  }
+
+  article h1 {
+    font-size: 2.5em;
+  }
+
+  article p {
+    text-align: justify;
+  }
+
+  article button {
+
+    width: auto;
+    padding: 15px;
+    font-size: 1.3em;
+  }
+
+  article img {
+    width: 80vw;
+    height: 200px;
+  }
+
+  /*AQUI SE ACABA EL ARTICLE*/
+  .product-section {
+    padding: 40px;
+  }
+
+  .product-section .card-section {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .product-section h2 {
+    font-size: 1.8em;
+    text-align: center;
+  }
+
+  .product-section .card-section {
+    gap: 30px;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .product-section .card-section .product-card {
+    width: 90%;
+    max-width: 320px;
+    height: auto;
+    padding: 20px;
+  }
+
+  .product-section .card-section .product-card .product-image img {
+    width: 100%;
+    height: 300px;
+  }
+
+  /*AQUI SE ACABA LA PRODUCT SECTION*/
+
+  .info-section {
+    padding: 30px 20px;
+  }
+
+  .about-us {
+    padding: 20px 10px;
+    text-align: center;
+  }
+
+  .about-us .mission-section {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about-us .mission-section .earth,
+  .about-us .mission-section .innovation {
+    width: 100%;
+  }
+
+  .about-us .mission-section .earth p,
+  .about-us .mission-section .innovation p {
+    text-align: justify;
+  }
+
+  .gallery {
+    margin: 20px;
+  }
+
+  .gallery h2 {
+    font-size: 2.0em;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+
+  .gallery .gallery-images {
+
+    flex-direction: column;
+
+  }
+
+  .gallery .gallery-images img {
+    width: 100%;
+    height: 45vh;
+    padding: 10px;
+
+  }
+
+
+
+
+  .location .map {
+
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .location img {
+    width: 100%;
+    height: 50vh;
+    padding: 10px;
+  }
+
+  .location h2 {
+    text-align: center;
+    padding: 20px
+  }
+
+  .location h3,
+  .location p {
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+}
+/*Para tablets y ipads*/
+
+@media(min-width:481px) and (max-width:768px) {
+  article {
+    padding:20px;
+  }
+
+  article .impact-section {
+    padding-right: 0;
+  }
+
+  article h1 {
+    font-size: 2em;
+  }
+
+  article p {
+    text-align: justify;
+    padding-right: 0;
+  }
+
+  article button {
+    width: auto;
+
+    
+  }
+
+  /*AQUI SE ACABA EL ARTICLE*/
+  .product-section {
+    padding: 25px;
+  }
+
+  .product-section h2 {
+    font-size: 1.8em;
+    text-align: center;
+    
+  }
+
+  .product-section .card-section {
+    column-gap: 50px;
+    row-gap: 50px;
+  }
+
+  .product-section .card-section .product-card {
+    width: 35%;
+  }
+
+  .product-section .card-section .product-card .product-image img {
+    width: 100%;
+  }
+
+  /*AQUI SE ACABA LA PRODUCT SECTION*/
+
+  .info-section {
+    padding: 25px;
+  }
+
+  .about-us {
+     text-align: center;
+  }
+  .about-us h2{
+    padding-bottom: 10px;
+  }
+
+  .about-us .mission-section {
+    gap:10px;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+  .about-us .mission-section .earth,
+  .about-us .mission-section .innovation {
+    width:100%
+  }
+
+  .about-us .mission-section .earth p,
+  .about-us .mission-section .innovation p {
+    text-align: justify;
+  }
+
+  .gallery {
+    margin: 20px;
+  }
+
+  .gallery h2 {
+    font-size: 2.0em;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+
+  .gallery .gallery-images {
+
+    width:100%;
+    flex-direction: column;
+
+  }
+
+  .gallery .gallery-images img {
+    width: 100%;
+    height: 45vh;
+    padding: 10px;
+
+  }
+
+
+
+
+ 
+
+  .location img {
+    width: 100%;
+  }
+
+  .location h2 {
+    text-align: center;
+    padding-bottom: 0;
+  }
+
+  .location h3,
+  .location p {
+    text-align: center;
+  }
+
+}
