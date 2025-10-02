@@ -118,7 +118,7 @@ body{
 .grid-item-h{
     grid-column: 4/6;
     grid-row: 2/4;
-    background: radial-gradient(circle, white, black 76%);
+    background: radial-gradient(circle, white, black 70%);
 }
 .grid-item-h-img{
     width: 100%;

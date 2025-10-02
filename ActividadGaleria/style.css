@@ -1,0 +1,29 @@
+header{
+    background-color: #731313;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: auto;
+    
+}
+
+.section_MisFotos{
+    
+}
+.section_MisFotos_btn{
+    
+}
+
+.section_MisFotosFotos{
+
+}
+
+
+footer{
+     background-color: #731313;
+     display:flex;
+     justify-content: center;
+     align-items: center;
+     color:white;
+}
