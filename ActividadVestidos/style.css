@@ -1,0 +1,38 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:   #D9A0A1;
+}
+header h1{
+    font-family:'Mea Culpa', serif;
+    color: #8C4526;
+    font-size: 3rem;
+}
+header h2{
+    display: none;
+}
+
+.Section_search{
+    background-size: cover;
+    width: 100%;
+    height:15vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero_search{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 40px;
+    width: 80%;
+}
