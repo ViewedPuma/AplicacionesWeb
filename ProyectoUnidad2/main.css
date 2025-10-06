@@ -194,6 +194,14 @@ body {
   z-index: 999;
 }
 
+.footer_Desktop {
+  display: none;
+}
+
+.tiposDogo_DogoPC {
+  display: none;
+
+
 @media(min-width: 1024px) {
     header{
     display:flex;
