@@ -8,40 +8,70 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
     <header>
-
+        <h1>¡Bienvenido!</h1>
     </header>
     <main>
         <div class="main_Welcome-Section">
-            <img src="" alt="DogoLogo">
+            <img class="main_LoginLogo" src="./recursos/DogoLogo.png" alt="DogoLogo">
+
+        </div>
+        <div class="main_Welcome-Section-titulo">
             <h1> ¡Bienvenido!</h1>
         </div>
-        <div class="main_Login-Section">
-            <form>
-                <input  type="text" name="datoUsuario" id="usuario" placeholder="Numero de celular o correo electronico"required>
-                <input type="password" name="passwordUsuario" id="password" placeholder="Contraseña" required>
-                <a href="#">¿Olvidaste tu contraseña?</a>
-                <button type="submit">Iniciar Sesion</button>
-            </form>
-        </div>
-        <div class="main_LoginOption-Section">
-            <p class="divider">Continuar con</p>
-            <div class="social-buttons">
-                <button class="buttons">
-                    <img src="./recursos/Googleimg.png" alt="Google">
-                </button>
-                <button class="buttons">
-                    <img src="./recursos/FacebookImg.png" alt="Facebook">
-                </button>
-                <button class="buttons">
-                    <img src="./recursos/Appleimg.png" alt="Apple">
-                </button>
+        <div class="main_Login">
+            <div class="main_Login-Section">
+                <form>
+                    <div class="Login_DatosUsuario">
+                        <input type="text" name="datoUsuario" id="usuario" placeholder="Numero de celular o correo"
+                            required>
+                    </div>
+
+                    <div class="Login_Password">
+                        <input type="password" name="passwordUsuario" id="password" placeholder="Contraseña" required>
+                    </div>
+
+                    <div class="Login_OlvidastePassword">
+                        <a href="#">¿Olvidaste tu contraseña?</a>
+
+                    </div>
+                    <div class="Login_Boton">
+                        <a href="main.html">Iniciar Sesion</a>
+                    </div>
+
+
+
+                </form>
             </div>
-            <p></p>
-            
+
+            <div class="main_LoginOption-Section">
+
+                <div class="main_LoginOption-Section-divider">
+                    <div class="LoginOption-divider"></div>
+                    <p class="divider">Continuar con</p>
+                    <div class="LoginOption-divider"></div>
+                </div>
+
+
+                <div class="social-buttons">
+                    <button class="buttons">
+                        <img class="Redes_buttons" src="./recursos/Googleimg.png" alt="Google">
+                    </button>
+                    <button class="buttons">
+                        <img class="Redes_buttons" src="./recursos/FacebookImg.png" alt="Facebook">
+                    </button>
+                    <button class="buttons">
+                        <img class="Redes_buttons" src="./recursos/Appleimg.png" alt="Apple">
+                    </button>
+                </div>
+
+                <p class="TextoNocuenta">No tienes una cuenta? <a class="CrearCuenta" href="#">Crea una</a></p>
+
+            </div>
         </div>
     </main>
     <footer>

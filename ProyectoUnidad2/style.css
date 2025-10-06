@@ -1,5 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .chelsea-market-regular {
   font-family: "Chelsea Market", system-ui;
   font-weight: 400;
   font-style: normal;
+}
+
+header {
+  display: none;
+}
+
+body {
+  font-family: 'lato', sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 50px;
+}
+
+.main_Welcome-Section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 30px;
+  margin-top: 10vh;
+}
+
+.main_Welcome-Section-titulo h1 {
+  font-size: 2.5em;
+  font-family: 'Chelsea Market', sans-serif;
+  color: #FF6021;
+}
+
+.main_LoginLogo {
+  width: 90px;
+  height: 90px;
+}
+
+.main_Login-Section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/*
+.Login_DatosUsuario{
+  background: #EEEEEE;
+  border-radius: 10px;
+
+}
+  */
+.Login_DatosUsuario input {
+  width: 300px;
+  height: 40px;
+  border: none;
+  outline: none;
+  padding: 25px;
+  font-size: 1em;
+  border-radius: 15px;
+  background: #EEEEEE;
+
+}
+
+.Login_Password {}
+
+.Login_Password input {
+  width: 300px;
+  height: 40px;
+  border: none;
+  outline: none;
+  padding: 25px;
+  font-size: 1em;
+  border-radius: 15px;
+  background: #EEEEEE;
+  margin-top: 20px;
+}
+
+.Login_OlvidastePassword {
+  display: flex;
+  justify-content: center;
+}
+
+.Login_OlvidastePassword a {
+  text-decoration: none;
+  color: #6B6464;
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+
+.Login_Boton {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+
+}
+
+.Login_Boton a {
+  text-decoration: none;
+  background: #FF6021;
+  border: none;
+  border-radius: 15px;
+  font-family: 'Chelsea Market', sans-serif;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1.4em;
+}
+
+.main_LoginOption-Section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.main_LoginOption-Section-divider {
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  width: 100%;
+  max-width: 480px;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.LoginOption-divider {
+  flex: 1;
+  height: 1px;
+  background: #6B6464;
+  ;
+}
+
+.divider {
+  color: #6B6464;
+  font-size: 0.9em;
+  white-space: nowrap;
+
+}
+
+.social-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 45px;
+}
+
+.buttons {
+  padding: 5px;
+  border: 1px solid #C1C1C1;
+  border-radius: 15px;
+}
+
+.Redes_buttons {
+  width: 45px;
+  height: 45px;
+}
+
+.TextoNocuenta {
+  color: #6B6464;
+  font-size: 0.9em;
+  margin-bottom: 50px;
+}
+
+.CrearCuenta {
+  text-decoration: none;
+}
+
+/* Estilos Desktop */
+@media (min-width: 768px) {
+  header{
+    display: block;
+    text-align: center;
+    
+  }
+  header h1{
+    margin-top: 15%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    font-family: 'Chelsea Market', sans-serif;
+    color: #FF6021;
+  }
+  
+
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    position:relative;
+    
+    
+  }
+  .main_Welcome-Section{}
+
+  .main_Welcome-Section-titulo h1
+  {
+    display: none;
+  }
+
+  .main_LoginLogo{
+    content: url(./recursos/DogoLogoExtendido.png);
+    position: absolute;
+    left:0;
+    width: 50%;
+    height: 50%;
+    top:100px
+    
+  }
+  .main_Login{
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+   padding:60px;
+   gap:20px;
+   margin-top: 5%;
+   margin-right: 7%;
+  }
+  .Login_DatosUsuario input,
+  .Login_Password input,
+  .main_LoginOption-Section-divider,
+  .social-buttons,
+  .TextoNocuenta{
+    width:100%;
+    max-width:380px;
+  }
+
+   
 }

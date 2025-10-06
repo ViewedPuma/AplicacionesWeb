@@ -1,0 +1,416 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.chelsea-market-regular {
+  font-family: "Chelsea Market", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+header {
+  display: none;
+}
+
+.section_dogo {
+  padding: 20px;
+  margin-top: 4%;
+
+}
+
+.section_dogo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+
+}
+
+body {
+  font-family: 'lato', sans-serif;
+  padding-bottom: 70px;
+}
+
+.main_ubicacion {
+  padding: 20px;
+}
+
+.main_ubicacion_textoUbicacion {
+  display: none;
+}
+
+.ubicacion_opciones {
+  background: #FFE4DA;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.opciones_lugares {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  color: #6E2003;
+}
+
+.opciones_iconubicacion {
+  width: 30px;
+  height: 30px;
+}
+
+.main_ubicacion_resultado {
+  padding: 5px;
+  color: #ABA9A9;
+
+}
+
+.main_tiposDogo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+}
+
+.tiposDogo_Dogo {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: #FFE4DA;
+  border-radius: 12px;
+  padding: 14px 16px;
+
+  overflow: hidden;
+}
+
+.Dogo_logo {
+  width: 90px;
+  aspect-ratio: 1/1;
+  background: #FFFFFF;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.Dogo_logo img {
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
+}
+
+.Dogo_info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+  
+}
+
+
+.Dogo_info h2 {
+  font-size: 1rem;
+  font-family: 'Chelsea Market', sans-serif;
+  color: #6E2003;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
+}
+
+.Dogo_direccion {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 0.70rem;
+  line-height: 1.1;
+  color: #6E2003;
+}
+
+.Dogo_icon {
+  width: 22px;
+  height: 22px;
+  background: #FFF0EB;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.Dogo_iconubicacion {
+  width: 25px;
+  height: 25px;
+}
+
+.Dogo_direccion p {
+  font-size: 0.9rem;
+  margin: 0;
+  max-width: 200px;
+  word-wrap: break-word;
+}
+
+
+.Dogo_btn {
+  width: 80%;
+  background: #E54D11;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 20px;
+  font-size: 1rem;
+  font-family: 'Chelsea Market', sans-serif;
+  cursor: pointer;
+  align-self: center;
+  flex-shrink: 0;
+  transition: background .2s;
+}
+
+.Dogo_btn:hover {
+  background: #e25015;
+}
+
+.footer_Celular {
+  background: #D10000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+@media(min-width: 1024px) {
+    header{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    gap:32px;
+    min-height:90px;
+    padding:0 24px;
+    background:#fff;
+    max-width:1200px;
+    margin:0 auto;          
+  }
+
+  header img{
+    position:static;  
+    transform:none;
+    width:72px;
+    height:72px;
+    object-fit:contain;
+    flex-shrink:0;
+    margin-right: 20px;
+  }
+
+  header h1{
+    margin:0;
+    font-size:2rem;
+    font-family:'Krona One', sans-serif;
+    color:#e25015;
+  }
+  .Header_Logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  header nav{
+   padding-right: 40px;
+  }
+
+  header nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+    margin:0;
+    padding:0;
+  }
+
+  header nav ul li a{
+    text-decoration:none;
+    font-family:'Chelsea Market', sans-serif;
+    color:#6E2003;
+    font-size:1rem;
+    padding:6px 4px;
+    transition:color .2s;
+  }
+  header nav ul li a:hover{
+    color:#FF6021;
+  }
+
+  .section_dogo {
+  padding:0;
+  margin-top: 0;
+  height: 30vh;
+  
+
+}
+
+.section_dogo img {
+  width: 100%;
+  height: 100%;
+  border-radius:0;
+
+}
+
+main{
+  margin: 0 15vw;
+
+}
+
+.main_ubicacion_textoUbicacion{
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: center;
+  color: #6E2003;
+  
+}
+
+.main_tiposDogo{
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.tiposDogo_Dogo{
+  display:none;
+}
+.tiposDogo_DogoPC {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 8px;
+  background: #FFE4DA;
+  border-radius: 12px;
+  padding: 14px 20px;
+  width:300px; 
+  height: auto;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.Dogo_logo {
+  width: 100%;
+  height: 50%;
+  
+}
+
+.Dogo_logo img {
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
+}
+
+.Dogo_info {
+  
+  margin: 0;
+  padding: 0;
+  height: auto;
+  gap: 4px;
+  margin-bottom: 8px;
+  
+ 
+  
+}
+
+.Dogo_info h2 {
+  font-size: 1rem;
+  font-family: 'Chelsea Market', sans-serif;
+  color: #6E2003;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
+}
+
+.Dogo_btn {
+  width: 80%;
+  padding: 6px;
+;
+}
+
+.footer_Desktop {
+        display: flex;
+        background: #FF6338;
+        color: white;
+        padding: 40px 0;
+        justify-content: center;
+        gap: 80px;
+        margin-top: 40px;
+    }
+
+    .footer_column {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        min-width: 250px;
+    }
+
+    .footer_column h3 {
+        font-family: 'Chelsea Market', sans-serif;
+        font-size: 1.1rem;
+        margin: 0 0 10px 0;
+        color: white;
+    }
+
+    .footer_social_item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.9rem;
+    }
+
+    .footer_social_item img {
+        width: 24px;
+        height: 24px;
+        background: #FFE4DA;
+        border-radius: 4px;
+        padding: 2px;
+    }
+
+    .footer_links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .footer_links li a {
+        color: white;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.2s;
+    }
+
+    .footer_links li a:hover {
+        color: #FFE4DA;
+        text-decoration: underline;
+    }
+
+    body{
+        padding-bottom: 0;
+    }
+
+  .footer_Celular {
+    display: none;
+  }
+
+}
