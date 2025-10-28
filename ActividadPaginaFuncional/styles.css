@@ -1,0 +1,17 @@
+.text{
+    color:aqua;
+    background-color: beige;
+}
+.button{
+    border-radius: 10px;
+    padding: 5px;
+    border: none;
+}
+
+.green{
+    background-color: yellow;
+}
+
+.red{
+    background-color: blueviolet;
+}

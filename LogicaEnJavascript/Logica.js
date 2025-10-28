@@ -131,7 +131,7 @@ function deEnteroABinario(numBinario){
     }
     return binario;
 }
-console.log(deEnteroABinario(10));
+console.log(deEnteroABinario(25));
 
 
 console.log(0 == false);
