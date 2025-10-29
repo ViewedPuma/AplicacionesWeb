@@ -27,14 +27,14 @@ class PortafolioService {
         return this.proyectos;
     }
     guardarProyecto(proyecto) {
-        this.proyectos.push(proyecto);
+        this.proyectos.push(proyecto); // el metodo push es que agrega un elemento
     }
     eliminarProyecto(id) {
-        this.proyectos = this.proyectos.filter(proyecto => proyecto.id !== id);
+        this.proyectos = this.proyectos.filter(proyecto => proyecto.id !== id);// se utiliza un filtro donde si el proyecto es diferente al id que queremos eliminar se queda, de otra manera se elimina
     }
     actualizarProyecto(id, proyecto) {
-        const index = this.proyectos.findIndex(p => p.id === id);
-        if (index !== -1) {
+        const index = this.proyectos.findIndex(p => p.id === id); //find index busca el indicice del proyecto que queremos actualizar
+        if (index !== -1) { //si el index es diferente de -1 significa que lo encontro
             this.proyectos[index] = proyecto;
         }
     }
