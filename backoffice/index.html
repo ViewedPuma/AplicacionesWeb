@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Login</h1>
+            <p>Bienvenido al Backoffice</p>
+        </div>
+
+        <form>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <div class="input-wrapper">
+                    <input type="email" id="email" placeholder="Ingrese su email">
+                    <span class="check-icon">✓</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="input-wrapper">
+                    <input type="password" id="password" placeholder="Ingrese su password">
+                    <span class="check-icon">✓</span>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Ingresar</button>
+        </form>
+
+        <div class="footer">
+            No tienes una cuenta? <a href="./Register.html">Registrate</a>
+        </div>
+    </div>
+    <script>
+        const form = document.getElementById('loginForm');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            
+            window.location.href = './Home.html';
+        });
+    </script>
+</body>
+</html>
