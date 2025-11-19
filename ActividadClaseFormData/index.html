@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./script.js" defer></script>
+
+</head>
+
+<body>
+    <h1> Sube tu archivo</h1>
+    <form id="form">
+        <label for="file">Selecciona un archivo:</label>
+        <input type="file" id="file" name="file" />
+        <button type="submit">Subir Archivo</button>
+    </form>
+
+    <div id="bouncyCircle"></div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@mojs/core" defer></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const bouncyCircle = new mojs.Shape({
+            parent: '#bouncyCircle',
+            shape: 'circle',
+            fill: { '#F64040': '#FC46AD' },
+            radius: { 20: 80 },
+            duration: 2000,
+            isYoyo: true,
+            isShowStart: true,
+            easing: 'elastic.inout',
+            repeat: 9999,
+        });
+
+        bouncyCircle.play();
+    });
+</script>
+
+</html>
