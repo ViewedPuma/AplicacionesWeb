@@ -1,7 +1,8 @@
 const API_BASE = "https://portfolio-api-three-black.vercel.app/api/v1";
 
-function saveToken(token){
+function saveToken(token, userId){
     localStorage.setItem("authToken", token);
+   
 }
 
 async function login({email, password}){

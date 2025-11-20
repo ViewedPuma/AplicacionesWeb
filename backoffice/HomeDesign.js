@@ -1,109 +1,219 @@
- let projects = [];
-        let editingIndex = -1;
+const API_BASE = "https://portfolio-api-three-black.vercel.app/api/v1";
 
-        // Cargar proyectos al iniciar
-        window.onload = function() {
-            loadProjects();
-            renderProjects();
-        };
+let projects = [];
+let editingProjectId = null;
 
-        function loadProjects() {
-            const saved = localStorage.getItem('projects');
-            if (saved) {
-                projects = JSON.parse(saved);
-            } else {
-                // Proyectos de ejemplo
-                projects = [
-                    {
-                        name: "Sistema de Gestión",
-                        description: "Sistema completo para gestionar inventarios y ventas de una empresa."
-                    },
-                    {
-                        name: "App Móvil de Tareas",
-                        description: "Aplicación para organizar y seguir el progreso de tareas diarias."
-                    },
-                    {
-                        name: "Dashboard Analytics",
-                        description: "Panel de control para visualizar métricas y estadísticas en tiempo real."
-                    }
-                ];
-                saveToStorage();
-            }
-        }
+// Inicio
+window.onload = () => {
+  init();
+};
 
-        function saveToStorage() {
-            localStorage.setItem('projects', JSON.stringify(projects));
-        }
+async function init() {
+  try {
+    await fetchProjects();
+    renderProjects();
+  } catch (err) {
+    console.error(err);
+    renderError("No se pudieron cargar los proyectos.");
+  }
+}
 
-        function renderProjects() {
-            const grid = document.getElementById('projectsGrid');
-            
-            if (projects.length === 0) {
-                grid.innerHTML = `
-                    <div class="empty-state">
-                        <h3>No hay proyectos</h3>
-                        <p>Agrega tu primer proyecto para comenzar</p>
-                    </div>
-                `;
-                return;
-            }
+// Obtener proyectos del usuario autenticado
+async function fetchProjects() {
+  const token = localStorage.getItem("authToken");
+  if (!token) {
+    projects = [];
+    return;
+  }
+  const res = await fetch(`${API_BASE}/projects`, {
+    headers: { "auth-token": token }
+  });
+  if (!res.ok) throw new Error("Error al obtener proyectos");
+  projects = await res.json();
+}
 
-            grid.innerHTML = projects.map((project, index) => `
-                <div class="project-card">
-                    <h3>${project.name}</h3>
-                    <p>${project.description}</p>
-                    <div class="project-actions">
-                        <button class="btn-edit" onclick="editProject(${index})">Editar</button>
-                        <button class="btn-delete" onclick="deleteProject(${index})">Eliminar</button>
-                    </div>
-                </div>
-            `).join('');
-        }
+// Renderizado
+function renderProjects() {
+  const grid = document.getElementById('projectsGrid');
+  if (!grid) return;
 
-        function openModal(isEdit = false) {
-            document.getElementById('modal').classList.add('active');
-            document.getElementById('modalTitle').textContent = isEdit ? 'Editar Proyecto' : 'Agregar Proyecto';
-        }
+  if (!projects || projects.length === 0) {
+    grid.innerHTML = `
+      <div class="empty-state">
+        <h3>No hay proyectos</h3>
+        <p>Crea tu primer proyecto.</p>
+      </div>
+    `;
+    return;
+  }
 
-        function closeModal() {
-            document.getElementById('modal').classList.remove('active');
-            document.getElementById('projectForm').reset();
-            editingIndex = -1;
-        }
+  grid.innerHTML = projects.map(p => `
+    <div class="project-card">
+      <h3>${escapeHtml(p.title || '')}</h3>
+      <p>${escapeHtml(p.description || '')}</p>
+      <p><strong>Tecnologías:</strong> ${(p.technologies || []).join(', ')}</p>
+      ${p.repository ? `<p><a href="${p.repository}" target="_blank">Repositorio</a></p>` : ''}
+      ${(p.images && p.images.length) ? `<img src="${p.images[0]}" alt="preview" style="max-width:100%;margin-top:6px;border-radius:4px;">` : ''}
+      <div class="project-actions">
+        <button class="btn-edit" onclick="handleEdit('${p._id}')">Editar</button>
+        <button class="btn-delete" onclick="handleDelete('${p._id}')">Eliminar</button>
+      </div>
+    </div>
+  `).join('');
+}
 
-        function saveProject(event) {
-            event.preventDefault();
-            
-            const name = document.getElementById('projectName').value;
-            const description = document.getElementById('projectDescription').value;
-            
-            if (editingIndex >= 0) {
-                // Actualizar proyecto existente
-                projects[editingIndex] = { name, description };
-            } else {
-                // Agregar nuevo proyecto
-                projects.push({ name, description });
-            }
-            
-            saveToStorage();
-            renderProjects();
-            closeModal();
-        }
+function renderError(msg) {
+  const grid = document.getElementById('projectsGrid');
+  if (grid) grid.innerHTML = `<div class="error-state"><p>${escapeHtml(msg)}</p></div>`;
+}
 
-        function editProject(index) {
-            editingIndex = index;
-            const project = projects[index];
-            
-            document.getElementById('projectName').value = project.name;
-            document.getElementById('projectDescription').value = project.description;
-            
-            openModal(true);
-        }
+// Modal
+function openModal(isEdit = false) {
+  document.getElementById('modal').classList.add('active');
+  document.getElementById('modalTitle').textContent = isEdit ? 'Editar Proyecto' : 'Agregar Proyecto';
+}
 
-        function deleteProject(index) {
-            if (confirm('¿Estás seguro de eliminar este proyecto?')) {
-                projects.splice(index, 1);
-                saveToStorage();
-                renderProjects();
-            }
-        }
+function closeModal() {
+  document.getElementById('modal').classList.remove('active');
+  document.getElementById('projectForm').reset();
+  editingProjectId = null;
+}
+
+// Guardar (crear / actualizar)
+async function saveProject(e) {
+  e.preventDefault();
+  const token = localStorage.getItem("authToken");
+  if (!token) {
+    alert("No autenticado");
+    return;
+  }
+
+  const title = document.getElementById('projectName').value.trim();
+  const description = document.getElementById('projectDescription').value.trim();
+  const technologiesRaw = document.getElementById('projectTechnologies').value.trim();
+  const repository = document.getElementById('projectRepository').value.trim();
+  const imageUrl = document.getElementById('projectImageUrl').value.trim();
+
+  if (!title) {
+    alert("Título requerido");
+    return;
+  }
+
+  const technologies = technologiesRaw
+    ? technologiesRaw.split(',').map(t => t.trim()).filter(Boolean)
+    : [];
+
+  
+  const userId = localStorage.getItem('userId'); 
+
+  const payload = {
+    title,
+    description,
+    technologies,
+    repository: repository || undefined,
+    images: imageUrl ? [imageUrl] : [],
+    ...(userId ? { userId } : {})
+  };
+
+  try {
+    if (editingProjectId) {
+      await updateProject(editingProjectId, payload);
+    } else {
+      await createProject(payload);
+    }
+    await fetchProjects();
+    renderProjects();
+    closeModal();
+  } catch (err) {
+    console.error(err);
+    alert("Error al guardar");
+  }
+}
+
+// Preparar edicion
+function handleEdit(id) {
+  const p = projects.find(x => x._id === id);
+  if (!p) return;
+  editingProjectId = id;
+  document.getElementById('projectName').value = p.title || '';
+  document.getElementById('projectDescription').value = p.description || '';
+  document.getElementById('projectTechnologies').value = (p.technologies || []).join(', ');
+  document.getElementById('projectRepository').value = p.repository || '';
+  document.getElementById('projectImageUrl').value = (p.images && p.images[0]) ? p.images[0] : '';
+  openModal(true);
+}
+
+// Eliminar
+async function handleDelete(id) {
+  if (!confirm("¿Eliminar este proyecto?")) return;
+  try {
+    await deleteProject(id);
+    projects = projects.filter(p => p._id !== id);
+    renderProjects();
+  } catch (err) {
+    console.error(err);
+    alert("Error al eliminar");
+  }
+}
+
+// evitar XSS
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;')
+    .replace(/'/g,'&#39;');
+}
+
+// metodos para llamar a la API
+async function getProjectsByUser() {
+    const token = localStorage.getItem("authToken");
+    const res = await fetch(`${API_BASE}/projects`, {
+        headers: { "auth-token": token },
+    });
+
+    if (!res.ok) throw new Error("No se pudieron obtener proyectos");
+    return res.json();
+}
+
+async function createProject(project) {
+    const token = localStorage.getItem("authToken");
+    const res = await fetch(`${API_BASE}/projects`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "auth-token": token,
+        },
+        body: JSON.stringify(project),
+    });
+
+    if (!res.ok) throw new Error("Error al crear proyecto");
+    return res.json();
+}
+
+async function updateProject(id, updates) {
+    const token = localStorage.getItem("authToken");
+    const res = await fetch(`${API_BASE}/projects/${id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            "auth-token": token,
+        },
+        body: JSON.stringify(updates),
+    });
+
+    if (!res.ok) throw new Error("Error al actualizar proyecto");
+    return res.json();
+}
+
+async function deleteProject(id) {
+    const token = localStorage.getItem("authToken");
+    const res = await fetch(`${API_BASE}/projects/${id}`, {
+        method: "DELETE",
+        headers: { "auth-token": token },
+    });
+
+    if (!res.ok) throw new Error("Error al eliminar proyecto");
+    return res.json();
+}
