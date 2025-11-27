@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    background-color: #0f1419;
+    color: #e8eaed;
+    line-height: 1.6;
+}
+
+header {
+    padding: 1.5rem 2rem;
+    background-color: #1a1f26;
+    border-bottom: 1px solid #2a3038;
+}
+
+.header {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.imagenHeader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagenHeader img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-name {
+    color: #e8eaed;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+nav {
+    margin-left: auto;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+    display: flex;
+    gap: 0.5rem;
+}
+
+nav a:hover {
+    color: #e8eaed;
+}
+
+nav a::before {
+    content: attr(data-number);
+    color: #667eea;
+    font-weight: bold;
+}
+
+
+.main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 6rem 2rem 4rem;
+}
+
+.main-presentacion {
+    color: #ff6b9d;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.main-titulo {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    font-family: Georgia, serif;
+}
+
+.main-descripcion {
+    font-size: 1.3rem;
+    color: #9ca3af;
+    max-width: 800px;
+}
+
+
+.proyectos {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.proyectos-titulo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    font-family: Georgia, serif;
+}
+
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.tech-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0;
+}
+
+.tech-list li {
+    background: rgba(255,255,255,0.08);
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    color: #e8eaed;
+}
+
+.repo-link {
+    margin-top: 1rem;
+    display: inline-block;
+    color: #ff6b9d;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.repo-link:hover {
+    text-decoration: underline;
+}
+
+.project-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    aspect-ratio: 4/3;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+        rgba(0,0,0,0.1),
+        rgba(0,0,0,0.8)
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+}
+
+footer {
+    background-color: #1a1f26;
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+    border-top: 1px solid #2a3038;
+}
+
+.footer-contenido {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-texto {
+    color: #9ca3af;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #e8eaed;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+    .main-titulo {
+        font-size: 2.8rem;
+    }
+
+    .main-descripcion {
+        font-size: 1.1rem;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .proyectos-grid {
+        grid-template-columns: 1fr;
+    }
+}

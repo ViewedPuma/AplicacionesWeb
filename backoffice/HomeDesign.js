@@ -48,12 +48,14 @@ function renderProjects() {
   }
 
   grid.innerHTML = projects.map(p => `
-    <div class="project-card">
+     <div class="project-card">
       <h3>${escapeHtml(p.title || '')}</h3>
       <p>${escapeHtml(p.description || '')}</p>
       <p><strong>Tecnologías:</strong> ${(p.technologies || []).join(', ')}</p>
-      ${p.repository ? `<p><a href="${p.repository}" target="_blank">Repositorio</a></p>` : ''}
-      ${(p.images && p.images.length) ? `<img src="${p.images[0]}" alt="preview" style="max-width:100%;margin-top:6px;border-radius:4px;">` : ''}
+      ${p.repository ? `<p><a href="${p.repository}" target="_blank" rel="noopener">Repositorio</a></p>` : ''}
+      ${(p.images && p.images[0]) 
+        ? `<img src="${p.images[0]}" alt="preview" class="preview-img" style="max-width:100%;border-radius:8px;margin-top:8px;">` 
+        : '<p style="font-size:12px;color:#888;">Sin imagen</p>'}
       <div class="project-actions">
         <button class="btn-edit" onclick="handleEdit('${p._id}')">Editar</button>
         <button class="btn-delete" onclick="handleDelete('${p._id}')">Eliminar</button>
@@ -103,30 +105,31 @@ async function saveProject(e) {
     ? technologiesRaw.split(',').map(t => t.trim()).filter(Boolean)
     : [];
 
-  
-  const userId = localStorage.getItem('userId'); 
-
   const payload = {
     title,
     description,
     technologies,
     repository: repository || undefined,
-    images: imageUrl ? [imageUrl] : [],
-    ...(userId ? { userId } : {})
+        images: imageUrl ? [imageUrl] : []
   };
 
   try {
+    let res;
     if (editingProjectId) {
-      await updateProject(editingProjectId, payload);
+      res = await updateProject(editingProjectId, payload);
     } else {
-      await createProject(payload);
+      res = await createProject(payload);
+    }
+    if (!res || res.error) {
+      alert("Error al guardar");
+      return;
     }
     await fetchProjects();
     renderProjects();
     closeModal();
   } catch (err) {
     console.error(err);
-    alert("Error al guardar");
+    alert("Error al procesar");
   }
 }
 
@@ -216,4 +219,27 @@ async function deleteProject(id) {
 
     if (!res.ok) throw new Error("Error al eliminar proyecto");
     return res.json();
+}
+
+const imageInput = document.getElementById('projectImageUrl');
+if (imageInput) {
+  imageInput.addEventListener('input', () => {
+    const url = imageInput.value.trim();
+    const prev = document.getElementById('imagePreview');
+    if (!prev) return;
+    if (!url) {
+      prev.innerHTML = '';
+      return;
+    }
+    prev.innerHTML = `<img src="${url}" onerror="this.src='';" style="max-width:100%;border:1px solid #ddd;border-radius:4px;">`;
+  });
+}
+
+
+//se me olvido que se tenia que cerrar la sesion xd
+function logout() {
+  localStorage.removeItem('authToken');
+  projects = [];
+  // Redirige al login
+  window.location.href = './index.html';
 }
